@@ -16,7 +16,6 @@
 //2. 점수들의 평균 구하기
 //스크립틀릿(scriptlet) <% 문법을 사용해서 주어진 점수들의 평균을 구하세요.
 int[] scores = {80, 90, 100, 95, 80};
-
 double avg = 0;
 for (int i = 0; i < scores.length; i++){
 	avg += scores[i]*1.0/scores.length;
@@ -28,7 +27,7 @@ for (int i = 0; i < scores.length; i++){
 List<String> scoreList = Arrays.asList(new String[]{"X", "O", "O", "O", "X", "O", "O", "O", "X", "O"});
 int score = 0;
 for (int i = 0; i < scoreList.size(); i++){
-	if (scoreList.get(i) == "O"){
+	if (scoreList.get(i).equals("O")){
 		score += 100/scoreList.size();
 	}
 }
@@ -39,6 +38,7 @@ for (int i = 0; i < scoreList.size(); i++){
 String birthDay = "20010820";
 
 String year =  birthDay.substring(0, 4);
+//out.print(year);
 int yearInt = Integer.valueOf(year);
 %>
 
