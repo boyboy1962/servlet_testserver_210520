@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Quiz02</title>
+<title>GET Method(폼 태그) - BMI</title>
       <!-- bootstrap CDN link -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
@@ -14,12 +14,12 @@
     </head>
 <body>
 	<div class="container">
-		<h1>날짜 시간 링크</h1>
-		
-		<div class="mt-5">
-			<a href="/lesson02/quiz02_1.jsp?type=time" class="btn btn-info">현재 시간 확인</a>
-			<a href="/lesson02/quiz02_1.jsp?type=date" class="btn btn-success">현재 날짜 확인</a>
-		</div>
+		<div class="display-4 mb-3">체격 조건 입력</div>
+		<form method="get" action="/lesson02/quiz03_1.jsp">
+			<input type="text" class="text-form" name="hight" placeholder="키를 입력하세요."> cm        
+			<input type="text" class="text-form ml-2" name="weight" placeholder="몸무게를 입력하세요."> kg  
+			<button type="submit" class="btn btn-primary ml-2">계산</button>
+		</form>
 	</div>
 </body>
 </html>

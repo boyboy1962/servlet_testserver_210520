@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,13 +15,24 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </head>
 <body>
-	<div class="container">
-		<h1>날짜 시간 링크</h1>
+	<%
+		String type = request.getParameter("type");
+		Date now = new Date();
+		SimpleDateFormat sdf; // = null;
 		
-		<div class="mt-5">
-			<a href="/lesson02/quiz02_1.jsp?type=time" class="btn btn-info">현재 시간 확인</a>
-			<a href="/lesson02/quiz02_1.jsp?type=date" class="btn btn-success">현재 날짜 확인</a>
-		</div>
+		if (type.equals("time")){
+			// 시간 출력
+			sdf = new SimpleDateFormat("현재 시간은 HH시 mm분 ss초 입니다.");
+		} else {
+			// 날짜 출력
+			sdf = new SimpleDateFormat("오늘의 날짜는 yyyy년 MM월 dd일 입니다.");
+		}
+		
+		String result = sdf.format(now);
+	%>
+	
+	<div class="container">
+		<h1 class="display-3"><%= result %></h1>
 	</div>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Quiz02</title>
+<title>BMI</title>
       <!-- bootstrap CDN link -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
@@ -13,13 +13,34 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </head>
 <body>
+	<%
+		String hight 	= request.getParameter("hight");
+		String weight 	= request.getParameter("weight");
+		//BMI =  몸무게 / ((키 / 100.0) * (키 / 100.0));
+		double BMI = Integer.valueOf(weight) / ((Integer.valueOf(hight) / 100.0) * (Integer.valueOf(hight) / 100.0));
+	%>
 	<div class="container">
-		<h1>날짜 시간 링크</h1>
-		
-		<div class="mt-5">
-			<a href="/lesson02/quiz02_1.jsp?type=time" class="btn btn-info">현재 시간 확인</a>
-			<a href="/lesson02/quiz02_1.jsp?type=date" class="btn btn-success">현재 날짜 확인</a>
+		<h1>BMI 측정 결과입니다</h1>
+		<div class="display-2">
+		당신은 
+			<span class="text-primary">
+			<%	
+				String result = "";
+				if (BMI <= 20){
+					result = "저체중";
+				} else if (BMI <= 25){
+					result = "정상";
+				} else if (BMI <= 30){
+					result = "과체중";
+				} else {
+					result = "비만";
+				}
+				out.print(result);
+			%>
+			</span>
+		입니다.
 		</div>
+		BMI 수치 : <%= BMI %>
 	</div>
 </body>
 </html>
