@@ -14,14 +14,18 @@
     </head>
 <body>
 	<div class="container">
-		<input type="text" class="" name="rightSide">
-		<select >
-			<option value="add">+</option>
-			<option value="sub">-</option>
-			<option value="mul">*</option>
-			<option value="div">/</option>
-		</select>
-		<input type="text" class="" name="leftSide">
+		<h1>사칙 연산 계산기</h1>
+		<form class="d-flex" method="post" action="/lesson02/quiz04_1.jsp">
+			<input type="text" class="form-control col-2 m-2" name="rightSide">
+			<select class="form-control col-1 m-2" name="arithmetic">
+				<option>+</option>
+				<option>-</option>
+				<option>×</option>
+				<option>÷</option>
+			</select>
+			<input type="text" class="form-control col-2 m-2" name="leftSide">
+			<input type="submit" class="btn btn-success m-2">
+		</form>
 	</div>
 </body>
 </html>
