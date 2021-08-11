@@ -33,6 +33,26 @@
 					double num2 = Double.valueOf(leftSide);
 					double ans = 0;
 					
+					/* double result = 0;
+					String printOperator;
+					switch (operator){
+					case "plus":
+						result = number1 + number2;
+						printOperator = "+";
+						break;
+					case "minus":
+						result = number1 - number2;
+						printOperator = "-";
+						break;
+					case "multiple":
+						result = number1 * number2;
+						printOperator = "X";
+						break;
+					case "divide":
+						result = number1 / number2;
+						printOperator = "/";
+					} */
+					
 					if(arithmetic.equals("+")){
 						ans = num1 + num2;
 					} else if(arithmetic.equals("-")){

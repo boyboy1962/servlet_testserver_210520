@@ -18,13 +18,13 @@
 		<form class="d-flex" method="post" action="/lesson02/quiz04_1.jsp">
 			<input type="text" class="form-control col-2 m-2" name="rightSide">
 			<select class="form-control col-1 m-2" name="arithmetic">
-				<option>+</option>
+				<option>+</option> <!-- option 안쪽에 value 지정할 수 있다. 하지만 하지 않아도 무관하다.  -->
 				<option>-</option>
 				<option>×</option>
 				<option>÷</option>
 			</select>
 			<input type="text" class="form-control col-2 m-2" name="leftSide">
-			<input type="submit" class="btn btn-success m-2">
+			<input type="submit" class="btn btn-success m-2" value="계산하기">
 		</form>
 	</div>
 </body>

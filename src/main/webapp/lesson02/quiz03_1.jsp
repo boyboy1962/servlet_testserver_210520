@@ -25,7 +25,7 @@
 		당신은 
 			<span class="text-primary">
 			<%	
-				String result = "";
+				String result = ""; //해당 내용을 null로 작성해도 상관이 없음.
 				if (BMI <= 20){
 					result = "저체중";
 				} else if (BMI <= 25){
