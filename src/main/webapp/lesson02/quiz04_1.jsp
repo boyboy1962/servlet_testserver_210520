@@ -24,21 +24,6 @@
 		<h1>계산 결과</h1>
 		<div class="display-1">
 			<%= rightSide %> 
-			<%-- <%
-				String sign = "";
-				if(arithmetic.equals("add")){
-					sign = "+";
-				} else if(arithmetic.equals("sub")){
-					sign = "-";
-				} else if(arithmetic.equals("mul")){
-					sign = "×";
-				} else if(arithmetic.equals("div")){
-					sign = "÷";
-				} else {
-					sign = "일어날 수 없고 일어나면 안되는 일";
-				}
-				out.print(sign);
-			%> --%>
 			<%= arithmetic %>
 			<%= leftSide %>
 			=
