@@ -19,17 +19,30 @@
 	<h1>
 	<%
 		Calendar today = Calendar.getInstance();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일");	
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 M월 d일");	// 하나식만 나오게 할려면 M월 d일
+		
+		today.add(Calendar.DATE, -1);
 	
 		for(int i = 100; i <= 1000; i += 100){
 			today.add(Calendar.DATE, i);
 			out.print(i + "일 : " + "<span class='text-danger'>"  + sdf.format(today.getTime()) + "</span>" + "<br>");	
-		
+			today.add(Calendar.DATE, -i);
 		}
 		
-	
 	%>
-	</span>
+
+	<%
+		// 아래는 선생님 답변이다.
+		for(int i = 100; i <= 1000; i += 100){
+			today.add(Calendar.DATE, 100);
+	%>
+			<span class="display-4"><%= i %>일: </span>
+			<span class="display-4 text-danger"><%= sdf.format(today.getTime()) %></span>
+			<br>
+	<%
+		}
+	%>
+	
 	</h1>
 </body>
 </html>

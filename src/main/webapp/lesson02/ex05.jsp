@@ -23,6 +23,16 @@
 	// yesterday.add(Calendar.MONTH, -1); // 한달 전
 	// yesterday.add(Calendar.YEAR, -1); // 1년 전
 	out.print("어제 날짜:" + sdf2.format(yesterday.getTime()) + "<br>");
+	
+	// 두 날짜 비교
+	int result = today.compareTo(yesterday); //기준값.compareTo(비교값); => 기준값 > 비교값 = 1, 기준값 == 비교값 = 0, 기준값 < 비교값 = -1 
+	if (result >0) {
+		out.print("today가 더 크다");
+	} else if (result == 0){
+		out.print("두 날짜는 같다.");
+	} else {
+		out.print("yesterday가 더 크다");
+	}
 %>
 </body>
 </html>
