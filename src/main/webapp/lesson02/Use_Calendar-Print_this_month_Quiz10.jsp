@@ -16,16 +16,17 @@
     </head>
 <body>
 <%
-	Calendar March = Calendar.getInstance();
-	March.set(Calendar.MONTH, Calendar.MARCH);
-	March.set(Calendar.DATE, 1);
+	Calendar this_month = Calendar.getInstance();
+	this_month.add(Calendar.MONTH, -5);
+	this_month.set(Calendar.DATE, 1);
+	int fixed_month = this_month.get(Calendar.MONTH);
 	SimpleDateFormat sdf_title = new SimpleDateFormat("yyyy-MM");
 	SimpleDateFormat sdf_day = new SimpleDateFormat("d");
-	int DayOfWeek = March.get(Calendar.DAY_OF_WEEK);
+	int DayOfWeek = this_month.get(Calendar.DAY_OF_WEEK);
 	// out.print(DayOfWeek);
 %>
 	<div class="container">
-		<h1 class="text-center"><%= sdf_title.format(March.getTime()) %></h1>
+		<h1 class="text-center"><%= sdf_title.format(this_month.getTime()) %></h1>
 		<table class="table text-center">
 			<thead>
 				<tr>
@@ -41,29 +42,45 @@
 			<tbody>
 				<%
 				boolean startOfMonth = true;
-				while (March.get(Calendar.MONTH) == 2){ 
+				while (this_month.get(Calendar.MONTH) == fixed_month){ 
 					if(startOfMonth){ 
 					%>
 						<tr>
 						<%
 						for (int i = 1; i < DayOfWeek; i++){
 						%>
-							<th>A<th>
+							<th> </th>
 						<%
 						} 
 						for (int i = DayOfWeek; i <= 7; i++){ 
 						%>
-							<th><%= sdf_day.format(March.getTime()) %><th>
-							<% March.add(Calendar.DATE, +1); 
+							<th class="display-4"><%= sdf_day.format(this_month.getTime()) %></th>
+							<% this_month.add(Calendar.DATE, +1); 
 						}
 						startOfMonth = false;
-						%>
-								
+						%>		
 						</tr>
 					<%
-					} 
+					}
 					%>
-				<%} %>
+					<tr>
+					<%
+					for (int i = 1; i <= 7; i++){ 
+						if(this_month.get(Calendar.MONTH) == fixed_month){
+					%>
+							<th class="display-4"><%= sdf_day.format(this_month.getTime()) %><%-- <%= March.get(Calendar.MONTH) %><%= this_month %> --%></th>
+							<% this_month.add(Calendar.DATE, +1);
+						} else {
+						%>
+							<th> </th>
+						<%	
+						}
+					}
+					%>
+					</tr>
+				<%
+				} 
+				%>
 			</tbody>
 		</table>
 	</div>
