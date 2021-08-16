@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>한 페이지 레이아웃</title>
+<title>템플릿 구성</title>
       <!-- bootstrap CDN link -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
@@ -19,33 +19,27 @@
 		.right {height:1000px}
 		.contents {height: 90%}
 		footer {height: 10%}
-	</style>    
-    
+	</style> 
+	
 </head>
 <body>
 	<div id="wrap" class="bg-secondary">
-		<header class="bg-success">
-			<h2>Marondal</h2>
+		<header class="bg-warning">
+			<jsp:include page="header.jsp"></jsp:include>
 		</header>
 		<div class="d-flex">
 			<nav class="bg-info col-2">
-				<ul>
-					<li>메뉴</li>
-					<li>메뉴</li>
-					<li>메뉴</li>
-					<li>메뉴</li>
-				</ul>
+				<jsp:include page="menu.jsp"></jsp:include>
 			</nav>
 			<div class="right bg-warning col-10">
 				<section class="contents bg-primary">
-					<img src="https://cdn.pixabay.com/photo/2021/08/03/11/48/canal-6519196__340.jpg"  alt="사진">
-					<br>
-					수채화 같은 풍경
+					<%
+						String contentName = "content1.jsp";
+					%>
+					<jsp:include page="<%= contentName %>"></jsp:include>
 				</section>
 				<footer class="bg-danger">
-					<address>
-							Copyright © marondal 2021
-					</address>
+					<jsp:include page="footer.jsp"></jsp:include>
 				</footer>
 			</div>
 		</div>
