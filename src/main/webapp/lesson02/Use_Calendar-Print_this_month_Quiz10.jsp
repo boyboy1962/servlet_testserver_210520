@@ -24,10 +24,21 @@
 	SimpleDateFormat sdf_day = new SimpleDateFormat("d");
 	int DayOfWeek = this_month.get(Calendar.DAY_OF_WEEK);
 	// out.print(DayOfWeek);
+	// 선생님 풀이
+	// 월의 첫날 구하기
+	Calendar firstDateOfMonth = Calendar.getInstance();
+	firstDateOfMonth.set(Calendar.MONTH, Calendar.JUNE);
+	firstDateOfMonth.set(Calendar.DAY_OF_MONTH, 1);
+	
+	// 일:1, 월:2,
+	int firstDayOfMonth = firstDateOfMonth.get(Calendar.DAY_OF_WEEK);
+	
+	// 월의 말일 구하기
+	int lastDateOfMonth = firstDateOfMonth.getActualMaximum(Calendar.DAY_OF_MONTH);
 %>
 	<div class="container">
 		<h1 class="text-center"><%= sdf_title.format(this_month.getTime()) %></h1>
-		<table class="table text-center">
+		<table class="table text-center"> <!-- mt-3 -->
 			<thead>
 				<tr>
 					<th class="text-danger">일</th>
@@ -81,6 +92,34 @@
 				<%
 				} 
 				%>
+			</tbody>
+			<!-- 선생님 풀이 -->
+			<tbody>
+			<%
+				int day = 1 - (firstDayOfMonth - 1);
+				for (int i = 0; i < 6; i++) {
+					out.print("<tr>");
+					for (int j = 0; j < 7; j++){
+						out.print("<td>");
+						if (day > 0){
+							out.print(day);
+						}
+						out.print("</td>");
+						
+						day++;
+						
+						if (day > lastDateOfMonth) {
+							break;
+						}
+					}
+					
+					if (day > lastDateOfMonth) {
+						break;
+					}
+					
+					out.print("</tr>");
+				}
+			%>
 			</tbody>
 		</table>
 	</div>
