@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+a {text-decoration:none; color:#fff}
+a:hover {text-decoration:none; color:#fff}
+
+header {height: 80Px}
+/* nav {height: 50px} */
+/* .contents {height: 500px} */
+footer {height: 30px}
