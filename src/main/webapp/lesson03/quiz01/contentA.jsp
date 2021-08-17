@@ -158,11 +158,12 @@ list.add(map);
 
 			while (iter.hasNext()) {
 				String item = iter.next();
-				if (category == null) {
+				/* if (category == null) {
 			out.print("<td>");
 			out.print(channel.get(item));
 			out.print("</td>");
-				} else if (category.equals("전체")) {
+				} else  */
+				if (category == null || category.equals("전체")) {
 			out.print("<td>");
 			out.print(channel.get(item));
 			out.print("</td>");
