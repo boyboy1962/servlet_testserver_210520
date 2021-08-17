@@ -120,9 +120,11 @@
 		</section>
 		<!-- contents.jsp -->		
 		
+		<!-- footer.jsp -->
 		<footer class="bg d-flex justify-content-center align-items-center">
 			<small>Copyright 2021, sk broadband All Rights Reserved</small>
 		</footer>
+		<!-- footer.jsp -->
 		
 	</div>
 </body>
