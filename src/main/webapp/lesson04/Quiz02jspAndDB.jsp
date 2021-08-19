@@ -47,5 +47,6 @@
 			%>
 		</table>
 	</div>
+	<% mysqlService.disconnect(); %>
 </body>
 </html>
