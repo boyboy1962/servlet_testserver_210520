@@ -18,7 +18,7 @@
 	<div class="container">
 		<jsp:include page="quiz03Header.jsp"/>
 		<jsp:include page="quiz03Nav.jsp"/>
-		<section></section>
+		<jsp:include page="quiz03ListPage.jsp"/>
 		<footer></footer>
 	</div>
 </body>
