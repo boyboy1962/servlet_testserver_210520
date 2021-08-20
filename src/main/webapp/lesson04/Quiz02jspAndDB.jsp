@@ -24,8 +24,8 @@
 		ResultSet result = mysqlService.select(SelectQuery);
 	%>
 	<div class="container">
-		<table>
-			<thead class="table text-center">
+		<table class="table text-center">
+			<thead>
 				<tr>
 					<th>사이트</th>
 					<th>주소</th>
@@ -38,14 +38,17 @@
 			<tbody>
 				<tr>
 					<td><%= result.getString("name") %></td>
-					<td><%= result.getString("url") %></td>
-					<th><a href="/lesson04/quiz02_delete?id=<%= result.getInt("id") %>">삭제하기</a></th>
+					<td><a href="<%= result.getString("url") %>" target="_blank"><%= result.getString("url") %></a></td>
+					<td><a href="/lesson04/quiz02_delete?id=<%= result.getInt("id") %>" class="btn btn-danger">삭제하기</a></td>
 				</tr>
 			</tbody>
 			<%
 				}
 			%>
 		</table>
+		<div>
+			<a type="button" href="/lesson04/Quiz02_input.jsp" class="btn btn-primary">다른 북마크 등록하기</a>
+		</div>
 	</div>
 	<% mysqlService.disconnect(); %>
 </body>

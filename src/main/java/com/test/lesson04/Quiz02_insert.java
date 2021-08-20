@@ -14,7 +14,7 @@ import com.test.common.MysqlService;
 public class Quiz02_insert extends HttpServlet {
 	
 	@Override
-	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		// 파라미터에서 값을 꺼낸다.
 		String name = request.getParameter("name");
@@ -40,7 +40,7 @@ public class Quiz02_insert extends HttpServlet {
 		// DB 연결 해제
 		mysqlService.disconnect();
 		
-		// 리다이랙트
+		// 리다이랙트 => 목록 화면으로 이동
 		response.sendRedirect("/lesson04/Quiz02jspAndDB.jsp");
 	}
 

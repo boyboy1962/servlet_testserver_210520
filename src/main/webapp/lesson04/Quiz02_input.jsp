@@ -16,14 +16,14 @@
 
 <div class="container">
 	<h1>즐겨찾기 추가</h1>
-	<form method="get" action="/lesson04/quiz02_insert">
+	<form method="post" action="/lesson04/quiz02_insert">
 		<div>
 			<small>사이트명:</small><br>
-			<input type="text" name="name" class="form-control col-3">
+			<input type="text" name="name" id="name" class="form-control col-3">
 		</div>
 		<div>
-			<small>사이트 주소</small><br>
-			<input type="text" name="url" class="form-control col-6">
+			<small>사이트 주소:</small><br>
+			<input type="text" name="url" id="url" class="form-control col-6">
 		</div>
 		<div>
 			<button type="submit" class="btn btn-success mt-3">추가</button>
