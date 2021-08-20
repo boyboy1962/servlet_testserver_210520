@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+header {background-color: rgb(255,127,80); color: white; font-size: xx-large; font-weight: bold; padding-top: 20px; padding-bottom: 20px}
+
+nav {background-color: rgb(255,127,80);}
+nav .nav-link{text-decoration:none; color: white; font-size: x-large;}
+nav .nav-link:hover{background-color: rgb(255, 97,36); text-decoration:none; color: white; font-size: x-large;}
