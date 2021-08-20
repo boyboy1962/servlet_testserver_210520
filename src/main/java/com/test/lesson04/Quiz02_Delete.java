@@ -33,6 +33,7 @@ public class Quiz02_Delete extends HttpServlet {
 		// DB 연결 해제
 		mysqlService.disconnect();
 		
+		// 리다이렉트 => 즐겨찾기 목록
 		response.sendRedirect("/lesson04/Quiz02jspAndDB.jsp");
 	}
 }
